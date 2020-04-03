@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ListTodos = () => {
+
+    const [todos, setTodos] = useState([]);
+
+  const getTodos = async() => {
+    try {
+        const response = await fetch('http://localhost:5000/todos');
+        const jsonResp = await response.json();
+        setTodos(jsonResp);
+    } catch (err) {
+        console.error(err.message)
+    }
+  };
   
+  useEffect (() => {
+    getTodos();
+  });
+
     return (
         <section>
           <table className="table mt-5 text-center">
@@ -14,12 +30,14 @@ const ListTodos = () => {
                 </tr>
             </thead>
             <tbody>
-                {/* <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                </tr> */}
+                {todos.map((todo) => {
+                    return <tr>
+                    <th scope="row">{todo.todo_id}</th>
+                    <td>{todo.description}</td>
+                    <td><button className='btn btn-warning'>Edit</button></td>
+                    <td><button className='btn btn-danger'>Delete</button></td>
+                    </tr> 
+                })}
             </tbody>
           </table>
         </section>
