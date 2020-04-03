@@ -2,7 +2,13 @@ import React from 'react';
 
 const InputTodo = () => {
     return (
-        <h2>Input Todo</h2>
+        <section>
+            <h2>PERN Todo List</h2>
+            <form>
+                <input type='text' />
+                <button>Add</button>
+            </form>
+        </section>
     )
 }
 
