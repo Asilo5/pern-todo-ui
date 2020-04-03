@@ -16,7 +16,7 @@ const ListTodos = () => {
   
   useEffect (() => {
     getTodos();
-  });
+  }); 
 
     return (
         <section>
