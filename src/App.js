@@ -3,10 +3,12 @@ import './App.css';
 
 // components
 import InputTodo from './Components/InputTodo';
+import ListTodos from './Components/ListTodos';
 
 function App() {
   return <Fragment>
     <InputTodo />
+    <ListTodos />
   </Fragment>;
 }
 
