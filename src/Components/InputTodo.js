@@ -4,10 +4,29 @@ const InputTodo = () => {
 
    const [description, setDescription] = useState('');
 
+   const onSubmitForm = async (e) => {
+     e.preventDefault();
+
+     try {
+         const body = { description };
+         await fetch('http://localhost:5000/todos', {
+             method: 'POST',
+             headers: {
+                 "Content-Type" : "application/json"
+             },
+             body: JSON.stringify(body)
+         });
+     } catch (error) {
+         setDescription(error.message);
+     }
+
+     setDescription('');
+   }
+
     return (
         <section className='text-center mt-5'>
             <h2>PERN Todo List</h2>
-            <form className='d-flex mt-5'>
+            <form className='d-flex mt-5' onSubmit={onSubmitForm}>
                 <input type='text' 
                        className='form-control' 
                        value={description} 
