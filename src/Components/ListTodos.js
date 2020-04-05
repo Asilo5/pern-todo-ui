@@ -18,6 +18,10 @@ const ListTodos = () => {
     getTodos();
   }); 
 
+  const deleteTodo = (id) => {
+
+  }
+
     return (
         <section>
           <table className="table mt-5 text-center">
@@ -31,11 +35,11 @@ const ListTodos = () => {
             </thead>
             <tbody>
                 {todos.map((todo) => {
-                    return <tr>
+                    return <tr key={todo.todo_id}>
                     <th scope="row">{todo.todo_id}</th>
                     <td>{todo.description}</td>
                     <td><button className='btn btn-warning'>Edit</button></td>
-                    <td><button className='btn btn-danger'>Delete</button></td>
+                    <td><button className='btn btn-danger' onClick={() => deleteTodo(todo.todo_id)}>Delete</button></td>
                     </tr> 
                 })}
             </tbody>
