@@ -40,6 +40,8 @@ const EditTodos = ({ todo }) => {
                 <section className="modal-footer">
                     <button type="button" 
                             className="btn btn-primary"
+                            data-dismiss="modal" 
+                            aria-label="Close"
                             onClick={(e) => updateDescription(e)}
                             >
                             Save changes
