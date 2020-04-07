@@ -4,23 +4,46 @@ const EditTodos = ({ todo }) => {
 
   const [ description, setDescription ] = useState(todo.description);
 
+  const updateDescription = async (e) => {
+     e.preventDefault();
+     try {
+         const body = { description };
+         await fetch(`http://localhost:5000/todos/${todo.todo_id}`, {
+             method: 'PUT',
+             headers: {'Content-Type' : 'application/json'},
+             body: JSON.stringify(body)
+         });
+
+     } catch (err) {
+        console.error(err.message);
+     }
+  }
+
   return (
       <section>
-        <button type="button" class="btn btn-warning" data-toggle="modal" data-target={`#id${todo.todo_id}`}> Edit </button>
+        <button type="button" className="btn btn-warning" data-toggle="modal" data-target={`#id${todo.todo_id}`}> Edit </button>
 
-        <section class="modal fade" id={`id${todo.todo_id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <section class="modal-dialog" role="document">
-            <section class="modal-content">
-                <section class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <section className="modal fade" id={`id${todo.todo_id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <section className="modal-dialog" role="document">
+            <section className="modal-content">
+                <section className="modal-header">
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                 </section>
-                <section class="modal-body">
-                    <input type='text' className='form-control' value={description} />
+                <section className="modal-body">
+                    <input type='text' 
+                           className='form-control' 
+                           value={description} 
+                           onChange={(e) => setDescription(e.target.value)} />
                 </section>
-                <section class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                <section className="modal-footer">
+                    <button type="button" 
+                            className="btn btn-primary"
+                            onClick={(e) => updateDescription(e)}
+                            >
+                            Save changes
+                    </button>
                 </section>
             </section>
         </section>
