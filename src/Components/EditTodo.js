@@ -14,7 +14,7 @@ const EditTodos = () => {
                     </button>
                 </section>
                 <section class="modal-body">
-                    ...
+                    <input type='text' className='form-control ' />
                 </section>
                 <section class="modal-footer">
                     <button type="button" class="btn btn-primary">Save changes</button>
