@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const EditTodos = ({ todo }) => {
 
-    // console.log(todos);
+  const [ description, setDescription ] = useState(todo.description);
 
   return (
       <section>
-        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"> Edit </button>
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target={`#id${todo.todo_id}`}> Edit </button>
 
-        <section class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <section class="modal fade" id={`id${todo.todo_id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <section class="modal-dialog" role="document">
             <section class="modal-content">
                 <section class="modal-header">
@@ -17,7 +17,7 @@ const EditTodos = ({ todo }) => {
                     </button>
                 </section>
                 <section class="modal-body">
-                    <input type='text' className='form-control ' />
+                    <input type='text' className='form-control' value={description} />
                 </section>
                 <section class="modal-footer">
                     <button type="button" class="btn btn-primary">Save changes</button>
