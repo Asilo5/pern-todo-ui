@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import EditTodos from './EditTodo';
 
 const ListTodos = () => {
 
@@ -44,7 +45,7 @@ const ListTodos = () => {
                     return <tr key={todo.todo_id}>
                     <th scope="row">{todo.todo_id}</th>
                     <td>{todo.description}</td>
-                    <td><button className='btn btn-warning'>Edit</button></td>
+                    <td><EditTodos todo={todo} /></td>
                     <td><button className='btn btn-danger' onClick={() => deleteTodo(todo.todo_id)}>Delete</button></td>
                     </tr> 
                 })}
