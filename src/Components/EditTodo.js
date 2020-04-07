@@ -1,6 +1,9 @@
 import React from 'react';
 
-const EditTodos = () => {
+const EditTodos = ({ todo }) => {
+
+    // console.log(todos);
+
   return (
       <section>
         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"> Edit </button>
