@@ -27,7 +27,11 @@ const EditTodos = ({ todo }) => {
         <section className="modal-dialog" role="document">
             <section className="modal-content">
                 <section className="modal-header">
-                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" 
+                            className="close" 
+                            data-dismiss="modal" 
+                            aria-label="Close"
+                            onClick={() => setDescription(todo.description)}>
                       <span aria-hidden="true">&times;</span>
                     </button>
                 </section>
