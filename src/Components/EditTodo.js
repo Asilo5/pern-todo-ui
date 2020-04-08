@@ -23,11 +23,20 @@ const EditTodos = ({ todo }) => {
       <section>
         <button type="button" className="btn btn-warning" data-toggle="modal" data-target={`#id${todo.todo_id}`}> Edit </button>
 
-        <section className="modal fade" id={`id${todo.todo_id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <section className="modal fade" 
+                 id={`id${todo.todo_id}`} 
+                 tabindex="-1" role="dialog" 
+                 aria-labelledby="exampleModalLabel" 
+                 aria-hidden="true"
+                 onClick={() => setDescription(todo.description)}>
         <section className="modal-dialog" role="document">
             <section className="modal-content">
                 <section className="modal-header">
-                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" 
+                            className="close" 
+                            data-dismiss="modal" 
+                            aria-label="Close"
+                            onClick={() => setDescription(todo.description)}>
                       <span aria-hidden="true">&times;</span>
                     </button>
                 </section>
@@ -44,7 +53,7 @@ const EditTodos = ({ todo }) => {
                             aria-label="Close"
                             onClick={(e) => updateDescription(e)}
                             >
-                            Save changes
+                            Save Edit
                     </button>
                 </section>
             </section>
