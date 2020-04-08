@@ -53,7 +53,7 @@ const EditTodos = ({ todo }) => {
                             aria-label="Close"
                             onClick={(e) => updateDescription(e)}
                             >
-                            Save changes
+                            Save Edit
                     </button>
                 </section>
             </section>
