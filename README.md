@@ -1,6 +1,6 @@
 # PERN TODO
 
-A review on how to make a Full-Stack todo app using ###P ostgreSQL ###E xpress ###R eact and ###N ode. With this app I learnt more on how to use PostgreSQL commands on the command line/ terminal which I found absolutely valuable!
+A review on how to make a Full-Stack todo app using (P)ostgreSQL (E)xpress (R)eact and (N)ode. With this app I learnt more on how to use PostgreSQL commands on the command line / terminal which I found absolutely valuable!
 
 ## View PERN TODO locally in your computer
 
@@ -16,4 +16,5 @@ PERN TODO was built using:
   - React
   - Bootstrap
   - Express
+  - Node
   - PostgreSQL
